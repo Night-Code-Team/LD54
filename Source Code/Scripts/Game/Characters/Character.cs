@@ -5,5 +5,6 @@ public abstract partial class Character : CharacterBody2D
     public abstract void Move();
     public abstract void Attack();
     public abstract int HP { get; set; }
+    [Export]
     public abstract int Vel { get; set; }
 }

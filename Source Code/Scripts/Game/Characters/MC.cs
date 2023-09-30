@@ -1,5 +1,15 @@
 public partial class MC : Character
 {
+    public void GetInput()
+    {
+        Vector2 inputDirection = Input.GetVector("a", "d", "w", "s");
+        Velocity = inputDirection * Vel;
+    }
+    public override void _PhysicsProcess(double delta)
+    {
+        GetInput();
+        MoveAndSlide();
+    }
     public override void Spawn()
     {
 
@@ -17,5 +27,5 @@ public partial class MC : Character
 
     }
     public override int HP { get; set; } = 3;
-    public override int Vel { get; set; }
+    public override int Vel { get; set; } = 400;
 }
