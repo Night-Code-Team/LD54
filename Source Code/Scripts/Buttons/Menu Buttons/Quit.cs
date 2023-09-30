@@ -1,6 +1,6 @@
 public partial class Quit : AppButton
 {
-    public override void _OnButtonPressed()
+    public override void OnButtonPressed()
     {
         GetTree().Quit();
     }
