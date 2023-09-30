@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dce2fktlrocex"]
+
+[ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Start.cs" id="1_y2noc"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="2_ddbrv"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 870.0
+offset_right = 665.0
+offset_bottom = 1020.0
+text = "Start
+"
+script = ExtResource("1_y2noc")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1249.0
+offset_top = 864.0
+offset_right = 1849.0
+offset_bottom = 1014.0
+text = "Quit"
+script = ExtResource("2_ddbrv")

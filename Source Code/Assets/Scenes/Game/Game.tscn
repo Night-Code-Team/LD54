@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf7cvkdc3o7g5"]
+
+[ext_resource type="Script" path="res://Scripts/Game/HPBar.cs" id="1_54iov"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Pause.cs" id="1_du2po"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Resume.cs" id="2_qbmxw"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Menu.cs" id="3_jjjop"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="4_yxgnr"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Field" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HP Bar" type="Control" parent="Field"]
+anchors_preset = 0
+offset_left = 57.0
+offset_top = 36.0
+offset_right = 247.0
+offset_bottom = 86.0
+script = ExtResource("1_54iov")
+
+[node name="Pause" type="Button" parent="Field"]
+layout_mode = 0
+offset_left = 1678.0
+offset_top = 30.0
+offset_right = 1878.0
+offset_bottom = 80.0
+text = "Pause"
+script = ExtResource("1_du2po")
+
+[node name="Pause Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Pause Background" type="ColorRect" parent="Pause Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.419608)
+
+[node name="Resume" type="Button" parent="Pause Menu/Pause Background"]
+layout_mode = 0
+offset_left = 674.0
+offset_top = 318.0
+offset_right = 1274.0
+offset_bottom = 468.0
+text = "Resume
+"
+script = ExtResource("2_qbmxw")
+
+[node name="Menu" type="Button" parent="Pause Menu/Pause Background"]
+layout_mode = 0
+offset_left = 673.0
+offset_top = 492.0
+offset_right = 1273.0
+offset_bottom = 642.0
+text = "Menu
+"
+script = ExtResource("3_jjjop")
+
+[node name="Quit" type="Button" parent="Pause Menu/Pause Background"]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 666.0
+offset_right = 1272.0
+offset_bottom = 816.0
+text = "Quit"
+script = ExtResource("4_yxgnr")
