@@ -1,6 +1,6 @@
-public partial class Map : TileMap
+public partial class Field : TileMap
 {
-	private readonly int startRadius = 25;
+	private readonly float startRadius = 2.5F;
 	[Export]
 	private Vector2I groundCords = new(0, 0);
 	[Export]
