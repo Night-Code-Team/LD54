@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Resume.cs" id="2_qbmxw"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Menu.cs" id="3_jjjop"]
 [ext_resource type="PackedScene" uid="uid://cecugobn1cx2g" path="res://Assets/Templates/Characters/MC.tscn" id="4_2dsvc"]
-[ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="4_yxgnr"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_drsjl")
@@ -31,7 +30,6 @@ position = Vector2(940, 526)
 
 [node name="Camera" type="Camera2D" parent="Field"]
 position = Vector2(960, 540)
-script = ExtResource("1_owaod")
 
 [node name="HP Bar" type="Control" parent="Field/Camera"]
 layout_mode = 3
@@ -48,7 +46,6 @@ offset_top = -508.0
 offset_right = 921.0
 offset_bottom = -458.0
 text = "Pause"
-script = ExtResource("1_du2po")
 
 [node name="Pause Menu" type="Control" parent="Field/Camera"]
 visible = false
@@ -76,7 +73,6 @@ offset_right = 1274.0
 offset_bottom = 468.0
 text = "Resume
 "
-script = ExtResource("2_qbmxw")
 
 [node name="Menu" type="Button" parent="Field/Camera/Pause Menu/Pause Background"]
 layout_mode = 0
@@ -86,7 +82,6 @@ offset_right = 1273.0
 offset_bottom = 642.0
 text = "Menu
 "
-script = ExtResource("3_jjjop")
 
 [node name="Quit" type="Button" parent="Field/Camera/Pause Menu/Pause Background"]
 layout_mode = 0

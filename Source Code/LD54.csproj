@@ -3,4 +3,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Aardvark.Base.FSharp" Version="5.2.25" />
+  </ItemGroup>
 </Project>
