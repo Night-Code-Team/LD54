@@ -33,7 +33,7 @@ public partial class Field : TileMap
 					{
 						SetCell(1, CordsOnField, 0, new Vector2I(CellType[0]+1, CellType[1]));
 					}
-					else if (CellType[1] == 0 &&CellType[0] == 8)
+					else if (CellType[1] == 0 && CellType[0] == 8)
 					{
 						SetCell(1, CordsOnField, 0, new Vector2I(0, 1));
 					}

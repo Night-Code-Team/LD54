@@ -19,6 +19,10 @@ public partial class MC : Character
 		GetNode<Camera2D>("/root/Game/Camera").Position = Position;
 		Vector2 mousePos = GetViewport().GetMousePosition();
 		GetNode<ColorRect>("Aim").Position = new(mousePos.X - 980, mousePos.Y - 560);
+		if (LostGround)
+			FallTimer -= delta;
+		if (FallTimer < 0.0F)
+			Fall();
 	}
 	public override void Spawn()
 	{
@@ -51,10 +55,13 @@ public partial class MC : Character
 	}
 	public override void OnBodyEntered(Node2D body)
 	{
+		LostGround = false;
+		FallTimer = 0.1F;
 	}
 	public override void OnBodyExited(Node2D body)
 	{
-		Fall();
+		LostGround = true;
+		FallTimer = 0.1F;
 	}
 	public override void Fall()
 	{
@@ -62,4 +69,6 @@ public partial class MC : Character
 	}
 	public override int HP { get; set; } = 3;
 	public override int Vel { get; set; } = 200;
+	public override double FallTimer { get; set; } = 0.1F;
+	public override bool LostGround { get; set; } = false;
 }
