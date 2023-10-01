@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cf7cvkdc3o7g5"]
+[gd_scene load_steps=19 format=3 uid="uid://cf7cvkdc3o7g5"]
 
 [ext_resource type="Script" path="res://Scripts/Game/HPBar.cs" id="1_54iov"]
 [ext_resource type="Script" path="res://Scripts/Game/Game.cs" id="1_drsjl"]
@@ -9,6 +9,27 @@
 [ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Menu.cs" id="3_jjjop"]
 [ext_resource type="PackedScene" uid="uid://boajk5q68nfnm" path="res://Assets/Templates/Characters/MC.tscn" id="4_2dsvc"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="4_yxgnr"]
+[ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="6_y4t4s"]
+[ext_resource type="Texture2D" uid="uid://dxcl7pn5aw40p" path="res://Assets/Images/Buttons/pause.png" id="7_cstbi"]
+[ext_resource type="Texture2D" uid="uid://crjbwmajev5wa" path="res://Assets/Images/Buttons/resume.png" id="9_g5fuc"]
+[ext_resource type="Texture2D" uid="uid://b5q2gjk7spjm2" path="res://Assets/Images/Buttons/menu.png" id="11_do3jw"]
+[ext_resource type="Texture2D" uid="uid://ccwiya4dlsjt0" path="res://Assets/Images/Buttons/quit.png" id="13_ry5in"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghn8y"]
+shader = ExtResource("6_y4t4s")
+shader_parameter/Image = ExtResource("7_cstbi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0i81g"]
+shader = ExtResource("6_y4t4s")
+shader_parameter/Image = ExtResource("9_g5fuc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbu0g"]
+shader = ExtResource("6_y4t4s")
+shader_parameter/Image = ExtResource("11_do3jw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nhfli"]
+shader = ExtResource("6_y4t4s")
+shader_parameter/Image = ExtResource("13_ry5in")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_drsjl")
@@ -48,12 +69,12 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_54iov")
 
 [node name="Pause" type="Button" parent="Camera"]
+material = SubResource("ShaderMaterial_ghn8y")
 offset_left = 364.0
 offset_top = -254.0
 offset_right = 564.0
 offset_bottom = -204.0
 scale = Vector2(0.5, 0.5)
-text = "Pause"
 script = ExtResource("1_du2po")
 
 [node name="Pause Menu" type="Control" parent="Camera"]
@@ -75,30 +96,28 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.419608)
 
 [node name="Resume" type="Button" parent="Camera/Pause Menu/Pause Background"]
+material = SubResource("ShaderMaterial_0i81g")
 layout_mode = 0
 offset_left = 674.0
 offset_top = 318.0
 offset_right = 1274.0
 offset_bottom = 468.0
-text = "Resume
-"
 script = ExtResource("2_qbmxw")
 
 [node name="Menu" type="Button" parent="Camera/Pause Menu/Pause Background"]
+material = SubResource("ShaderMaterial_nbu0g")
 layout_mode = 0
 offset_left = 673.0
 offset_top = 492.0
 offset_right = 1273.0
 offset_bottom = 642.0
-text = "Menu
-"
 script = ExtResource("3_jjjop")
 
 [node name="Quit" type="Button" parent="Camera/Pause Menu/Pause Background"]
+material = SubResource("ShaderMaterial_nhfli")
 layout_mode = 0
 offset_left = 672.0
 offset_top = 666.0
 offset_right = 1272.0
 offset_bottom = 816.0
-text = "Quit"
 script = ExtResource("4_yxgnr")
