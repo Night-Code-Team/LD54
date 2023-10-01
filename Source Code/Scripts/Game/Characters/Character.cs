@@ -10,4 +10,6 @@ public abstract partial class Character : CharacterBody2D
 	public abstract int HP { get; set; }
 	[Export]
 	public abstract int Vel { get; set; }
+	public abstract double FallTimer { get; set; }
+	public abstract bool LostGround { get; set; }
 }
