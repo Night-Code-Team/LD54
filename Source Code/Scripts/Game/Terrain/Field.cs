@@ -9,9 +9,9 @@ public partial class Field : TileMap
 	public override void _Ready()
 	{
 		//Background
-		for (int x = -55; x < 55; x++)
+		for (int x = -size*10; x < size*10; x++)
 		{
-			for (int y = -55; y < 55; y++)
+			for (int y = -size*10; y < size*10; y++)
 			{
 				SetCell(0, new Vector2I(x, y), 0, airCords);
 			}
@@ -21,9 +21,9 @@ public partial class Field : TileMap
 	}
 	private void OnTick()
 	{
-		for (int x = -4; x < 4; x++)
+		for (int x = -size; x < size; x++)
 		{
-			for (int y = -4; y < 4; y++)
+			for (int y = -size; y < size; y++)
 			{
 				if (GetCellSourceId(1, new Vector2I(x, y), false) != -1)
 				{
