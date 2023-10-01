@@ -9,6 +9,7 @@ public partial class MC : Character
     {
         GetInput();
         MoveAndSlide();
+        GetNode<Camera2D>("/root/Game/Field/Camera").Position = Position;
     }
     public override void Spawn()
     {

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsjv7gjgf53sh"]
+
+[ext_resource type="Texture2D" uid="uid://bfskr8cdmthrd" path="res://Assets/Images/Tiles/tile1_set.png" id="1_jidn6"]
+[ext_resource type="Script" path="res://Scripts/Game/Terrain/Map.cs" id="2_07uhh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wfkbg"]
+texture = ExtResource("1_jidn6")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_73v3p"]
+tile_size = Vector2i(256, 256)
+sources/0 = SubResource("TileSetAtlasSource_wfkbg")
+
+[node name="Field" type="TileMap"]
+tile_set = SubResource("TileSet_73v3p")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0)
+script = ExtResource("2_07uhh")
