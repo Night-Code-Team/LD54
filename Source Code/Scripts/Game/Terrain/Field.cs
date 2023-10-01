@@ -1,14 +1,11 @@
 public partial class Field : TileMap
 {
-	[Export]
 	private Vector2I groundCords = new(0, 0);
-	[Export]
 	private Vector2I airCords = new(0, 1);
-	[Export]
-	private float PropabilityK = 0.32F;
-	[Export]
-	private float PropabilityB = 1.0F;
-	
+	private readonly float PropabilityK = 0.16F;
+	private readonly float PropabilityB = 1.0F;
+	private readonly int size = 5;
+
 	public override void _Ready()
 	{
 		//Background
@@ -30,7 +27,7 @@ public partial class Field : TileMap
 			{
 				if (GetCellSourceId(1, new Vector2I(x, y), false) != -1)
 				{
-					
+
 				}
 			}
 		}
@@ -40,9 +37,9 @@ public partial class Field : TileMap
 	public void Generate()
 	{
 		ClearLayer(1);
-		for (int x = -2; x <= 2; x++)
+		for (int x = -size; x <= size; x++)
 		{
-			for (int y = -2; y <= 2; y++)
+			for (int y = -size; y <= size; y++)
 			{
 				float distanceToCenter = Mathf.Sqrt(x * x + y * y);
 				if (distanceToCenter < 1)
@@ -51,7 +48,7 @@ public partial class Field : TileMap
 				}
 				else
 				{
-					float DestroyPropability = PropabilityK*(distanceToCenter - PropabilityB);
+					float DestroyPropability = PropabilityK * (distanceToCenter - PropabilityB);
 					if (GD.Randf() > DestroyPropability)
 					{
 						SetCell(1, new Vector2I(x, y), 0, groundCords);

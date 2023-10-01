@@ -16,7 +16,7 @@ public partial class MC : Character
 	{
 		Move();
 		Attack();
-		GetNode<Camera2D>("/root/Game/Field/Camera").Position = Position;
+		GetNode<Camera2D>("/root/Game/Camera").Position = Position;
 		Vector2 mousePos = GetViewport().GetMousePosition();
 		GetNode<ColorRect>("Aim").Position = new(mousePos.X - 980, mousePos.Y - 560);
 	}
@@ -60,5 +60,5 @@ public partial class MC : Character
 		Die();
 	}
 	public override int HP { get; set; } = 3;
-	public override int Vel { get; set; } = 400;
+	public override int Vel { get; set; } = 200;
 }

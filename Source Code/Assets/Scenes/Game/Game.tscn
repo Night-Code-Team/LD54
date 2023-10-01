@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bsjv7gjgf53sh" path="res://Assets/Templates/Terrain/Field.tscn" id="2_bgl8o"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Resume.cs" id="2_qbmxw"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Menu.cs" id="3_jjjop"]
-[ext_resource type="PackedScene" uid="uid://cecugobn1cx2g" path="res://Assets/Templates/Characters/MC.tscn" id="4_2dsvc"]
+[ext_resource type="PackedScene" uid="uid://boajk5q68nfnm" path="res://Assets/Templates/Characters/MC.tscn" id="4_2dsvc"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="4_yxgnr"]
 
 [node name="Game" type="Node2D"]
@@ -28,27 +28,31 @@ position = Vector2(960, 540)
 
 [node name="MC" parent="Field" instance=ExtResource("4_2dsvc")]
 position = Vector2(940, 526)
+scale = Vector2(0.5, 0.5)
 
 [node name="Music" type="AudioStreamPlayer" parent="Field"]
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(960, 540)
+zoom = Vector2(2, 2)
 script = ExtResource("1_owaod")
 
 [node name="HP Bar" type="Control" parent="Camera"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -918.0
-offset_top = -510.0
-offset_right = -728.0
-offset_bottom = -460.0
+offset_left = -458.0
+offset_top = -253.0
+offset_right = -268.0
+offset_bottom = -203.0
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_54iov")
 
 [node name="Pause" type="Button" parent="Camera"]
-offset_left = 721.0
-offset_top = -508.0
-offset_right = 921.0
-offset_bottom = -458.0
+offset_left = 364.0
+offset_top = -254.0
+offset_right = 564.0
+offset_bottom = -204.0
+scale = Vector2(0.5, 0.5)
 text = "Pause"
 script = ExtResource("1_du2po")
 
