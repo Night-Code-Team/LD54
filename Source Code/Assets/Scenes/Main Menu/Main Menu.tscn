@@ -3,8 +3,8 @@
 [ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="1_nslge"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Start.cs" id="1_y2noc"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="2_ddbrv"]
-[ext_resource type="Texture2D" uid="uid://dassriw1orbd8" path="res://Assets/Images/Buttons/start.png" id="2_e2vn0"]
-[ext_resource type="Texture2D" uid="uid://ccwiya4dlsjt0" path="res://Assets/Images/Buttons/quit.png" id="4_8bu1g"]
+[ext_resource type="Texture2D" uid="uid://cpi7mfnw605fk" path="res://Assets/Images/Buttons/start.png" id="2_e2vn0"]
+[ext_resource type="Texture2D" uid="uid://brh7pk8unr86g" path="res://Assets/Images/Buttons/quit.png" id="4_8bu1g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1moks"]
 shader = ExtResource("1_nslge")
