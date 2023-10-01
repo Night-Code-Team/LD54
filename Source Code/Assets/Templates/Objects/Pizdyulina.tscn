@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2vtd4my4lgss"]
+
+[ext_resource type="Texture2D" uid="uid://b6ao574j6nqs5" path="res://Assets/Images/Game/Pizdyulina.png" id="1_2e0b6"]
+[ext_resource type="Script" path="res://Scripts/Game/Objects/Pizdyulina.cs" id="1_50vhc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mafn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2e0b6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_efiw8"]
+height = 52.0
+
+[node name="Pizdyulina" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_50vhc")
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7mafn")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+rotation = 1.5708
+scale = Vector2(1.17575, 1)
+shape = SubResource("CapsuleShape2D_efiw8")
