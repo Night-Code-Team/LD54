@@ -9,9 +9,9 @@ public partial class Field : TileMap
 	public override void _Ready()
 	{
 		//Background
-		for (int x = -55; x < 55; x++)
+		for (int x = -size*10; x < size*10; x++)
 		{
-			for (int y = -55; y < 55; y++)
+			for (int y = -size*10; y < size*10; y++)
 			{
 				SetCell(0, new Vector2I(x, y), 0, airCords);
 			}
@@ -21,13 +21,29 @@ public partial class Field : TileMap
 	}
 	private void OnTick()
 	{
-		for (int x = -4; x < 4; x++)
+		for (int x = -size; x < size; x++)
 		{
-			for (int y = -4; y < 4; y++)
+			for (int y = -size; y < size; y++)
 			{
-				if (GetCellSourceId(1, new Vector2I(x, y), false) != -1)
+				Vector2I CordsOnField = new Vector2I(x, y);
+				if (GetCellSourceId(1, CordsOnField, false) != -1)
 				{
-
+					Vector2I CellType = GetCellAtlasCoords(1, CordsOnField, false);
+					if (CellType[1] == 0 && CellType[0] > 0 && CellType[0] < 8)
+					{
+						SetCell(1, CordsOnField, 0, new Vector2I(CellType[0]+1, CellType[1]));
+					}
+					else if (CellType[1] == 0 &&CellType[0] == 8)
+					{
+						SetCell(1, CordsOnField, 0, new Vector2I(0, 1));
+					}
+					else if (CellType[1] == 0 && CellType[0] == 0)
+					{
+						if (GD.Randf() < 0.01F)
+						{
+							SetCell(1, CordsOnField, 0, new Vector2I(1, 0));
+						}
+					}
 				}
 			}
 		}
