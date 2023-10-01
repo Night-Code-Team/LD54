@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsjv7gjgf53sh"]
 
-[ext_resource type="Texture2D" uid="uid://bfskr8cdmthrd" path="res://Assets/Images/Tiles/tile1_set.png" id="1_jidn6"]
-[ext_resource type="Script" path="res://Scripts/Game/Terrain/Map.cs" id="2_07uhh"]
+[ext_resource type="Texture2D" uid="uid://40v1us54c1rw" path="res://Assets/Images/Tiles/tile1_set.png" id="1_jidn6"]
+[ext_resource type="Script" path="res://Scripts/Game/Terrain/Field.cs" id="2_ba4yh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wfkbg"]
 texture = ExtResource("1_jidn6")
@@ -24,4 +24,4 @@ sources/0 = SubResource("TileSetAtlasSource_wfkbg")
 tile_set = SubResource("TileSet_73v3p")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 0, 0)
-script = ExtResource("2_07uhh")
+script = ExtResource("2_ba4yh")

@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Godot;
-using System;
 
 namespace LD54.Scripts.Game
 {
     public partial class GenerationBoar : Node2D
     {
-        
-
-    
         // Declare member variables here. Examples:
         // private int a = 2;
         // private string b = "text";
@@ -27,7 +22,6 @@ namespace LD54.Scripts.Game
         [Export(PropertyHint.Range, "1,8,1")]
         int deathLimit;
 
-
         [Export(PropertyHint.Range, "1,10,1")]
         int numR;
 
@@ -38,17 +32,12 @@ namespace LD54.Scripts.Game
         [Export]
         public Vector2 tMapSize;
 
-
         int width, height;
         Random rnd;
 
         Vector2[] BoundsInt;
         int[,] terrainMap;
 
-
-
-
-        // Called when the node enters the scene tree for the first tllime.
         public override void _Ready()
         {
             rnd = new Random();
@@ -66,13 +55,9 @@ namespace LD54.Scripts.Game
                 BoundsInt[j + 2] = new Vector2(i, 1);
 
                 j += 3;
-
             }
-
-
         }
 
-        // Called every frame. 'delta' is the elapsed time since the previous frame.
         public void _Process(float delta)
         {
 
@@ -92,10 +77,7 @@ namespace LD54.Scripts.Game
             if (Input.IsActionJustPressed("Mouse_middle"))
             {
                 clearMap(true);
-
             }
-
-
         }
 
 
@@ -118,23 +100,16 @@ namespace LD54.Scripts.Game
             {
                 for (int y = 0; y < height; y++)
                 {
-                    //if (terrainMap[x, y] == 1)
-                    //{
-                    //    topMap.SetCell(-x + width / 2, -y + height / 2, TopTile);
-                    //    topMap.SetCell(-x + width / 2, -y + height / 2, TopTile);
-                    //}
-                    //bottomMap.SetCell(-x + width / 2, -y+ height / 2, BotTile);
+                    //    if (terrainMap[x, y] == 1)
+                    //    {
+                    //        topMap.SetCell(-x + width / 2, -y + height / 2, TopTile);
+                    //        topMap.SetCell(-x + width / 2, -y + height / 2, TopTile);
+                    //    }
+                    //    bottomMap.SetCell(-x + width / 2, -y + height / 2, BotTile);
 
                 }
                 //topMap.UpdateBitmaskRegion(new Vector2(-width / 2, -height / 2), new Vector2(width / 2, height / 2));
-
             }
-
-
-
-
-
-
         }
 
         private int[,] neighbCheck(int[,] oldPos)
@@ -144,7 +119,6 @@ namespace LD54.Scripts.Game
 
             for (int x = 0; x < width; x++)
             {
-
                 for (int y = 0; y < height; y++)
                 {
                     neighb = 0;
@@ -181,24 +155,11 @@ namespace LD54.Scripts.Game
                             }
 
                         }
-
                     }
-
-
-
-
                 }
-
             }
-
-
-
             return newPos;
-
         }
-
-
-
 
         private void initPos()
         {
@@ -209,13 +170,8 @@ namespace LD54.Scripts.Game
                     terrainMap[x, y] = rnd.Next(1, 101) < iniChance ? 1 : 0;
 
                 }
-
             }
-
         }
-
-
-
 
         public void clearMap(bool complete)
         {
@@ -226,16 +182,7 @@ namespace LD54.Scripts.Game
             {
                 terrainMap = null;
             }
-
-
         }
-
-
-
-
-
-
     }
-
 }
 
