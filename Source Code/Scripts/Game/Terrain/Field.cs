@@ -25,9 +25,25 @@ public partial class Field : TileMap
 		{
 			for (int y = -size; y < size; y++)
 			{
-				if (GetCellSourceId(1, new Vector2I(x, y), false) != -1)
+				Vector2I CordsOnField = new Vector2I(x, y);
+				if (GetCellSourceId(1, CordsOnField, false) != -1)
 				{
-
+					Vector2I CellType = GetCellAtlasCoords(1, CordsOnField, false);
+					if (CellType[1] == 0 && CellType[0] > 0 && CellType[0] < 8)
+					{
+						SetCell(1, CordsOnField, 0, new Vector2I(CellType[0]+1, CellType[1]));
+					}
+					else if (CellType[1] == 0 &&CellType[0] == 8)
+					{
+						SetCell(1, CordsOnField, 0, new Vector2I(0, 1));
+					}
+					else if (CellType[1] == 0 && CellType[0] == 0)
+					{
+						if (GD.Randf() < 0.01F)
+						{
+							SetCell(1, CordsOnField, 0, new Vector2I(1, 0));
+						}
+					}
 				}
 			}
 		}
