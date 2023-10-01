@@ -16,7 +16,7 @@ public partial class MC : Character
     {
         Move();
         Attack();
-        GetNode<Camera2D>("/root/Game/Field/Camera").Position = Position;
+        GetNode<Camera2D>("/root/Game/Camera").Position = Position;
         Vector2 mousePos = GetViewport().GetMousePosition();
         GetNode<ColorRect>("Aim").Position = new(mousePos.X - 980, mousePos.Y - 560);
     }
@@ -39,12 +39,12 @@ public partial class MC : Character
     {
         if (Input.IsActionJustPressed("ЛКМ"))
         {
-            CharacterBody2D pizdyulina = GD.Load<PackedScene>("res://Assets/Templates/Objects/Pizdyulina.tscn").Instantiate<CharacterBody2D>();
+            Pizdyulina pizdyulina = GD.Load<PackedScene>("res://Assets/Templates/Objects/Pizdyulina.tscn").Instantiate<Pizdyulina>();
             pizdyulina.Position = Position;
             Vector2 aimPos = GetViewport().GetMousePosition();
             float angle = GetAngleTo(new(aimPos.X + Position.X - 960, aimPos.Y + Position.Y - 540));
             pizdyulina.Rotation = angle;
-            pizdyulina.Velocity = new(1000 * (float)Math.Cos(angle), 1000 * (float)Math.Sin(angle));
+            pizdyulina.Velocity = new(pizdyulina.Vel * (float)Math.Cos(angle), pizdyulina.Vel * (float)Math.Sin(angle));
             GetNode("/root/Game/Field").AddChild(pizdyulina);
         }
     }
