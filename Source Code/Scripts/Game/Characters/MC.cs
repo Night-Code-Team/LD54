@@ -26,7 +26,7 @@ public partial class MC : Character
 	}
 	public override void Die()
 	{
-
+		GetTree().ChangeSceneToFile("res://Assets/Scenes/Main Menu/Main Menu.tscn");
 	}
 	public override void Move()
 	{
@@ -39,12 +39,13 @@ public partial class MC : Character
 	{
 		if (Input.IsActionJustPressed("ЛКМ"))
 		{
-			CharacterBody2D pizdyulina = GD.Load<PackedScene>("res://Assets/Templates/Objects/Pizdyulina.tscn").Instantiate<CharacterBody2D>();
+			Pizdyulina pizdyulina = GD.Load<PackedScene>("res://Assets/Templates/Objects/Pizdyulina.tscn").Instantiate<Pizdyulina>();
 			pizdyulina.Position = Position;
 			Vector2 aimPos = GetViewport().GetMousePosition();
 			float angle = GetAngleTo(new(aimPos.X + Position.X - 960, aimPos.Y + Position.Y - 540));
 			pizdyulina.Rotation = angle;
-			pizdyulina.Velocity = new(1000 * (float)Math.Cos(angle), 1000 * (float)Math.Sin(angle));
+			pizdyulina.Scale = new(0.5f, 0.5f);
+			pizdyulina.Velocity = new(pizdyulina.Vel * (float)Math.Cos(angle), pizdyulina.Vel * (float)Math.Sin(angle));
 			GetNode("/root/Game/Field").AddChild(pizdyulina);
 		}
 	}
