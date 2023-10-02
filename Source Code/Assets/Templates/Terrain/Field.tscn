@@ -73,13 +73,6 @@ texture_region_size = Vector2i(256, 256)
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjqjr"]
-texture = ExtResource("2_nep5a")
-texture_region_size = Vector2i(256, 256)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-
 [sub_resource type="TileSet" id="TileSet_73v3p"]
 tile_size = Vector2i(256, 256)
 physics_layer_0/collision_layer = 1
