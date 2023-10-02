@@ -1,25 +1,26 @@
-[gd_scene load_steps=25 format=3 uid="uid://boajk5q68nfnm"]
+[gd_scene load_steps=26 format=3 uid="uid://boajk5q68nfnm"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Characters/MC.cs" id="1_pfkgx"]
-[ext_resource type="Texture2D" uid="uid://dqiewutjnfmdu" path="res://Assets/Images/Player/player_death1.png" id="2_hkj5a"]
-[ext_resource type="Texture2D" uid="uid://bnayucs5gtdb2" path="res://Assets/Images/Player/player_death2.png" id="3_udlku"]
-[ext_resource type="Texture2D" uid="uid://c8g8va3i7mut1" path="res://Assets/Images/Player/player_death3.png" id="4_b1ebr"]
-[ext_resource type="Texture2D" uid="uid://islwpuqaer0v" path="res://Assets/Images/Player/player_death4.png" id="5_v06vr"]
-[ext_resource type="Texture2D" uid="uid://cpwe3kbgrju6a" path="res://Assets/Images/Player/player_death5.png" id="6_hucbb"]
-[ext_resource type="Texture2D" uid="uid://cy2cj0ooijbtm" path="res://Assets/Images/Player/player_move1.png" id="7_83xu1"]
+[ext_resource type="Texture2D" uid="uid://nl12nc0q0xxl" path="res://Assets/Images/Player/player_death1.png" id="2_hkj5a"]
+[ext_resource type="Texture2D" uid="uid://cdtponvwmpou1" path="res://Assets/Images/Player/player_death2.png" id="3_udlku"]
+[ext_resource type="Texture2D" uid="uid://bcr51oinc3gme" path="res://Assets/Images/Player/player_death3.png" id="4_b1ebr"]
+[ext_resource type="Texture2D" uid="uid://cb5nxj772ts38" path="res://Assets/Images/Player/player_death4.png" id="5_v06vr"]
+[ext_resource type="Texture2D" uid="uid://c66onorcci8ie" path="res://Assets/Images/Player/player_death5.png" id="6_hucbb"]
+[ext_resource type="Texture2D" uid="uid://d4ggv57pbdc68" path="res://Assets/Images/Player/player_move1.png" id="7_83xu1"]
 [ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="7_drjx0"]
-[ext_resource type="Texture2D" uid="uid://beb2rdiyvc7tb" path="res://Assets/Images/Game/Aim.png" id="8_qtngn"]
-[ext_resource type="Texture2D" uid="uid://n8gsj3x2qsds" path="res://Assets/Images/Player/player_move2.png" id="8_uucci"]
-[ext_resource type="Texture2D" uid="uid://b1g7ocb2uxhpy" path="res://Assets/Images/Player/player_move3.png" id="9_kc1av"]
-[ext_resource type="Texture2D" uid="uid://bp08ld4sb6lgw" path="res://Assets/Images/Player/player_spawn1.png" id="10_tynib"]
-[ext_resource type="Texture2D" uid="uid://cmj1d8udqt7eo" path="res://Assets/Images/Player/player_spawn2.png" id="11_pq042"]
-[ext_resource type="Texture2D" uid="uid://dtm2c5dshukon" path="res://Assets/Images/Player/player_spawn3.png" id="12_cbsi0"]
-[ext_resource type="Texture2D" uid="uid://wuso5eba6ght" path="res://Assets/Images/Player/player_spawn4.png" id="13_y7n8k"]
-[ext_resource type="Texture2D" uid="uid://c74yvxjvsj5df" path="res://Assets/Images/Player/player_spawn5.png" id="14_ifljg"]
-[ext_resource type="Texture2D" uid="uid://df0n5sqwknhiw" path="res://Assets/Images/Player/player_spawn6.png" id="15_bct64"]
-[ext_resource type="Texture2D" uid="uid://cbbtngru24v01" path="res://Assets/Images/Player/player_stay1.png" id="16_f1yqo"]
-[ext_resource type="Texture2D" uid="uid://bvjtakgbhr3el" path="res://Assets/Images/Player/player_stay2.png" id="17_7nc8o"]
-[ext_resource type="Texture2D" uid="uid://c7nfg6pfprx06" path="res://Assets/Images/Player/player_stay3.png" id="18_tnhka"]
+[ext_resource type="Texture2D" uid="uid://55liay0qgl5y" path="res://Assets/Images/Game/Aim.png" id="8_qtngn"]
+[ext_resource type="Texture2D" uid="uid://cqe6ci4xblpf7" path="res://Assets/Images/Player/player_move2.png" id="8_uucci"]
+[ext_resource type="Texture2D" uid="uid://iec6kp06mmej" path="res://Assets/Images/Player/player_move3.png" id="9_kc1av"]
+[ext_resource type="Texture2D" uid="uid://bgvwwpdl37e" path="res://Assets/Images/Player/player_spawn1.png" id="10_tynib"]
+[ext_resource type="Texture2D" uid="uid://lxu724yrv18e" path="res://Assets/Images/Player/player_spawn2.png" id="11_pq042"]
+[ext_resource type="Texture2D" uid="uid://t31153ywm5pm" path="res://Assets/Images/Player/player_spawn3.png" id="12_cbsi0"]
+[ext_resource type="Texture2D" uid="uid://dll5tebh7f02e" path="res://Assets/Images/Player/player_spawn4.png" id="13_y7n8k"]
+[ext_resource type="Texture2D" uid="uid://dab886872oapl" path="res://Assets/Images/Player/player_spawn5.png" id="14_ifljg"]
+[ext_resource type="Texture2D" uid="uid://dnw41ri7us3q7" path="res://Assets/Images/Player/player_spawn6.png" id="15_bct64"]
+[ext_resource type="Texture2D" uid="uid://bjolosneveshx" path="res://Assets/Images/Player/player_stay1.png" id="16_f1yqo"]
+[ext_resource type="Texture2D" uid="uid://5m1lmgylvtia" path="res://Assets/Images/Player/player_stay2.png" id="17_7nc8o"]
+[ext_resource type="Texture2D" uid="uid://dyxnlwfr23ulg" path="res://Assets/Images/Player/player_stay3.png" id="18_tnhka"]
+[ext_resource type="Script" path="res://Scripts/Game/Characters/Character.cs" id="19_ehbeh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_183np"]
 animations = [{
@@ -112,8 +113,9 @@ script = ExtResource("1_pfkgx")
 
 [node name="Texture" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_183np")
-animation = &"Spawn"
+animation = &"Die"
 autoplay = "Spawn"
+script = ExtResource("19_ehbeh")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -7.5)
