@@ -59,7 +59,7 @@ stream = ExtResource("4_ps5h3")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(960, 540)
-zoom = Vector2(2, 2)
+zoom = Vector2(0.4, 0.4)
 script = ExtResource("1_owaod")
 
 [node name="HP Bar" type="Control" parent="Camera"]
@@ -92,6 +92,7 @@ offset_left = -960.0
 offset_top = -540.0
 offset_right = 960.0
 offset_bottom = 540.0
+scale = Vector2(0.5, 0.5)
 
 [node name="Pause Background" type="ColorRect" parent="Camera/Pause Menu"]
 layout_mode = 1
@@ -100,6 +101,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 color = Color(0, 0, 0, 0.419608)
 
 [node name="Resume" type="Button" parent="Camera/Pause Menu/Pause Background"]
