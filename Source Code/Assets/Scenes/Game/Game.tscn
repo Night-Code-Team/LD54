@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cf7cvkdc3o7g5"]
+[gd_scene load_steps=21 format=3 uid="uid://cf7cvkdc3o7g5"]
 
 [ext_resource type="Script" path="res://Scripts/Game/HPBar.cs" id="1_54iov"]
 [ext_resource type="Script" path="res://Scripts/Game/Game.cs" id="1_drsjl"]
@@ -8,12 +8,14 @@
 [ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Resume.cs" id="2_qbmxw"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Menu.cs" id="3_jjjop"]
 [ext_resource type="PackedScene" uid="uid://boajk5q68nfnm" path="res://Assets/Templates/Characters/MC.tscn" id="4_2dsvc"]
+[ext_resource type="AudioStream" uid="uid://bmku7eeyw8p4f" path="res://Assets/Sounds/background.mp3" id="4_ps5h3"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="4_yxgnr"]
 [ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="6_y4t4s"]
-[ext_resource type="Texture2D" uid="uid://dbxj8t187pxr4" path="res://Assets/Images/Buttons/pause.png" id="7_cstbi"]
-[ext_resource type="Texture2D" uid="uid://cqpqvgatdclrg" path="res://Assets/Images/Buttons/resume.png" id="9_g5fuc"]
-[ext_resource type="Texture2D" uid="uid://cct16cx3kg6v1" path="res://Assets/Images/Buttons/menu.png" id="11_do3jw"]
-[ext_resource type="Texture2D" uid="uid://brh7pk8unr86g" path="res://Assets/Images/Buttons/quit.png" id="13_ry5in"]
+[ext_resource type="Texture2D" uid="uid://dgw6nvh21wc7w" path="res://Assets/Images/Buttons/pause.png" id="7_cstbi"]
+[ext_resource type="Texture2D" uid="uid://bpdr0u8fhqd80" path="res://Assets/Images/Buttons/resume.png" id="9_g5fuc"]
+[ext_resource type="AudioStream" uid="uid://kw3ij4ughoa6" path="res://Assets/Sounds/button.mp3" id="10_dpvnc"]
+[ext_resource type="Texture2D" uid="uid://cgcw7ldjkj5r8" path="res://Assets/Images/Buttons/menu.png" id="11_do3jw"]
+[ext_resource type="Texture2D" uid="uid://fb2qsc7j45d6" path="res://Assets/Images/Buttons/quit.png" id="13_ry5in"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ghn8y"]
 shader = ExtResource("6_y4t4s")
@@ -52,6 +54,7 @@ position = Vector2(940, 526)
 scale = Vector2(0.5, 0.5)
 
 [node name="Music" type="AudioStreamPlayer" parent="Field"]
+stream = ExtResource("4_ps5h3")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(960, 540)
@@ -76,6 +79,9 @@ offset_right = 564.0
 offset_bottom = -204.0
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_du2po")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Camera/Pause"]
+stream = ExtResource("10_dpvnc")
 
 [node name="Pause Menu" type="Control" parent="Camera"]
 visible = false
@@ -104,6 +110,9 @@ offset_right = 1274.0
 offset_bottom = 468.0
 script = ExtResource("2_qbmxw")
 
+[node name="Click" type="AudioStreamPlayer2D" parent="Camera/Pause Menu/Pause Background/Resume"]
+stream = ExtResource("10_dpvnc")
+
 [node name="Menu" type="Button" parent="Camera/Pause Menu/Pause Background"]
 material = SubResource("ShaderMaterial_nbu0g")
 layout_mode = 0
@@ -113,6 +122,9 @@ offset_right = 1273.0
 offset_bottom = 642.0
 script = ExtResource("3_jjjop")
 
+[node name="Click" type="AudioStreamPlayer2D" parent="Camera/Pause Menu/Pause Background/Menu"]
+stream = ExtResource("10_dpvnc")
+
 [node name="Quit" type="Button" parent="Camera/Pause Menu/Pause Background"]
 material = SubResource("ShaderMaterial_nhfli")
 layout_mode = 0
@@ -121,3 +133,6 @@ offset_top = 666.0
 offset_right = 1272.0
 offset_bottom = 816.0
 script = ExtResource("4_yxgnr")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Camera/Pause Menu/Pause Background/Quit"]
+stream = ExtResource("10_dpvnc")
