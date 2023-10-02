@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bhynxokklh0y4"]
 
-[ext_resource type="Texture2D" uid="uid://dwvp6pwx51w6w" path="res://Assets/Images/Backgrounds/NCT.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://mttq3y32lv2o" path="res://Assets/Images/Backgrounds/NCT.png" id="1"]
 
 [sub_resource type="Shader" id="1"]
 code = "shader_type canvas_item;

@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5bqvqh65ef8g"]
+
+[ext_resource type="Texture2D" uid="uid://dfb10w0dhay50" path="res://Assets/Images/Portal/Portal.png" id="1_ajunj"]
+[ext_resource type="Script" path="res://Scripts/Game/Portal/Portal.cs" id="1_vcyun"]
+
+[sub_resource type="Animation" id="Animation_rxa0h"]
+resource_name = "spin"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hkqx"]
+_data = {
+"spin": SubResource("Animation_rxa0h")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wjprc"]
+radius = 53.0
+
+[node name="portal" type="Node2D"]
+script = ExtResource("1_vcyun")
+
+[node name="Portal" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+texture = ExtResource("1_ajunj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Portal"]
+autoplay = "spin"
+libraries = {
+"": SubResource("AnimationLibrary_1hkqx")
+}
+next/spin = &"spin"
+
+[node name="PlayerDetector" type="Area2D" parent="Portal"]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/PlayerDetector"]
+shape = SubResource("CircleShape2D_wjprc")
+debug_color = Color(0.384314, 0.47451, 1, 0.419608)
+
+[node name="KeyDetector" type="Area2D" parent="Portal"]
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/KeyDetector"]
+shape = SubResource("CircleShape2D_wjprc")
+debug_color = Color(0.384314, 0.47451, 1, 0.419608)
+
+[connection signal="body_entered" from="Portal/PlayerDetector" to="." method="OnPlayerEntered"]
+[connection signal="body_entered" from="Portal/KeyDetector" to="." method="OnKeyEntered"]
