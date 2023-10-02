@@ -43,6 +43,7 @@ next/spin = &"spin"
 
 [node name="PlayerDetector" type="Area2D" parent="Portal"]
 collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/PlayerDetector"]
 shape = SubResource("CircleShape2D_wjprc")
