@@ -1,14 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://boajk5q68nfnm"]
+[gd_scene load_steps=17 format=3 uid="uid://boajk5q68nfnm"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Characters/MC.cs" id="1_pfkgx"]
 [ext_resource type="AudioStream" uid="uid://c52cgwyoediw3" path="res://Assets/Sounds/player_run.mp3" id="2_7i33v"]
 [ext_resource type="AudioStream" uid="uid://bbnnuqf77fxvo" path="res://Assets/Sounds/magik_shoot.mp3" id="3_b1nsb"]
+[ext_resource type="Texture2D" uid="uid://bj2rkbcumr1o5" path="res://Assets/Images/Shield/shield.png" id="4_7txnx"]
 [ext_resource type="AudioStream" uid="uid://c2pshv6kmjr0b" path="res://Assets/Sounds/player_death_from_pizdule.mp3" id="4_qmnha"]
 [ext_resource type="AudioStream" uid="uid://dfj45afegswjf" path="res://Assets/Sounds/player_fall.mp3" id="5_sgmrs"]
 [ext_resource type="AudioStream" uid="uid://kqgb88sf85rl" path="res://Assets/Sounds/heart.mp3" id="6_ir3ru"]
 [ext_resource type="AudioStream" uid="uid://bdbtv6yxlplq" path="res://Assets/Sounds/player_spawn.mp3" id="7_anden"]
 [ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="7_drjx0"]
-[ext_resource type="Texture2D" uid="uid://beb2rdiyvc7tb" path="res://Assets/Images/Game/Aim.png" id="8_qtngn"]
+[ext_resource type="Texture2D" uid="uid://b5ajxp28xleo1" path="res://Assets/Images/Aim/aim.png" id="11_nv3qb"]
 [ext_resource type="Texture2D" uid="uid://cbbtngru24v01" path="res://Assets/Images/Player/player_stay1.png" id="16_f1yqo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_183np"]
@@ -22,15 +23,19 @@ animations = [{
 "speed": 0.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crd68"]
+shader = ExtResource("7_drjx0")
+shader_parameter/Image = ExtResource("4_7txnx")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpce1"]
 size = Vector2(30.5, 53.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ih4x2"]
 shader = ExtResource("7_drjx0")
-shader_parameter/Image = ExtResource("8_qtngn")
+shader_parameter/Image = ExtResource("11_nv3qb")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckphk"]
-size = Vector2(60, 38)
+size = Vector2(61, 38)
 
 [node name="MC" type="CharacterBody2D"]
 collision_layer = 2
@@ -40,6 +45,14 @@ script = ExtResource("1_pfkgx")
 [node name="Texture" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_183np")
 frame_progress = 0.949144
+
+[node name="Shield" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_crd68")
+offset_left = -63.0
+offset_top = -72.0
+offset_right = 65.0
+offset_bottom = 56.0
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -7.5)
@@ -73,7 +86,7 @@ offset_bottom = 40.0
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 27)
+position = Vector2(1.5, 27)
 shape = SubResource("RectangleShape2D_ckphk")
 debug_color = Color(0.776471, 0.431373, 0.235294, 0.419608)
 

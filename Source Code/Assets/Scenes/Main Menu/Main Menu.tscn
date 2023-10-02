@@ -1,11 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dce2fktlrocex"]
+[gd_scene load_steps=11 format=3 uid="uid://dce2fktlrocex"]
 
 [ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="1_nslge"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Start.cs" id="1_y2noc"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="2_ddbrv"]
-[ext_resource type="Texture2D" uid="uid://ep5nrbvlmesy" path="res://Assets/Images/Buttons/start.png" id="2_e2vn0"]
-[ext_resource type="Texture2D" uid="uid://fb2qsc7j45d6" path="res://Assets/Images/Buttons/quit.png" id="4_8bu1g"]
-[ext_resource type="AudioStream" uid="uid://kw3ij4ughoa6" path="res://Assets/Sounds/button.mp3" id="4_wws11"]
+[ext_resource type="Texture2D" uid="uid://cpi7mfnw605fk" path="res://Assets/Images/Buttons/start.png" id="2_e2vn0"]
+[ext_resource type="Texture2D" uid="uid://bfnnd2imupjis" path="res://Assets/Images/Backgrounds/menu.png" id="2_vpw2g"]
+[ext_resource type="Texture2D" uid="uid://brh7pk8unr86g" path="res://Assets/Images/Buttons/quit.png" id="4_8bu1g"]
+[ext_resource type="AudioStream" uid="uid://babcw77jfhqs7" path="res://Assets/Sounds/button.mp3" id="4_wws11"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o3327"]
+shader = ExtResource("1_nslge")
+shader_parameter/Image = ExtResource("2_vpw2g")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1moks"]
 shader = ExtResource("1_nslge")
@@ -17,6 +22,15 @@ shader_parameter/Image = ExtResource("4_8bu1g")
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_o3327")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

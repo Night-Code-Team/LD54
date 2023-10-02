@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cf7cvkdc3o7g5"]
+[gd_scene load_steps=22 format=3 uid="uid://cf7cvkdc3o7g5"]
 
 [ext_resource type="Script" path="res://Scripts/Game/HPBar.cs" id="1_54iov"]
 [ext_resource type="Script" path="res://Scripts/Game/Game.cs" id="1_drsjl"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://babcw77jfhqs7" path="res://Assets/Sounds/button.mp3" id="10_dpvnc"]
 [ext_resource type="Texture2D" uid="uid://cct16cx3kg6v1" path="res://Assets/Images/Buttons/menu.png" id="11_do3jw"]
 [ext_resource type="Texture2D" uid="uid://brh7pk8unr86g" path="res://Assets/Images/Buttons/quit.png" id="13_ry5in"]
+[ext_resource type="Script" path="res://Scripts/Game/Spawn.cs" id="17_eo86o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ghn8y"]
 shader = ExtResource("6_y4t4s")
@@ -136,3 +137,10 @@ script = ExtResource("4_yxgnr")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="Camera/Pause Menu/Pause Background/Quit"]
 stream = ExtResource("10_dpvnc")
+
+[node name="Spawn" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+script = ExtResource("17_eo86o")
+
+[connection signal="timeout" from="Spawn" to="." method="OnSpawnElapsed"]
