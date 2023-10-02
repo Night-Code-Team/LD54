@@ -8,7 +8,7 @@ public partial class Bydlo : Character
 	}
 	public override void Spawn()
 	{
-		Position = new(rng.Next(-1408, 1408), rng.Next(-1408, 1408));
+		Position = new(rng.Next(-2408, 2408), rng.Next(-2408, 2408));
 	}
 	public override void Die()
 	{
@@ -25,7 +25,6 @@ public partial class Bydlo : Character
 		if (!mc.Shielded)
 		{
 			mc.Shielded = true;
-			mc.HP -= 1;
 			HPBar hp = GetNode<HPBar>("/root/Game/Camera/HP Bar");
 			hp.RemoveChild(hp.GetChild(hp.GetChildCount() - 1));
 			if (mc.HP > 1)

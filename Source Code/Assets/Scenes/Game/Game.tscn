@@ -138,6 +138,21 @@ script = ExtResource("4_yxgnr")
 [node name="Click" type="AudioStreamPlayer2D" parent="Camera/Pause Menu/Pause Background/Quit"]
 stream = ExtResource("10_dpvnc")
 
+[node name="Score" type="Label" parent="Camera"]
+offset_left = -44.0
+offset_top = -256.0
+offset_right = 18.0
+offset_bottom = -219.0
+size_flags_vertical = 0
+text = "Score:"
+
+[node name="Counter" type="Label" parent="Camera"]
+offset_left = 9.0
+offset_top = -255.0
+offset_right = 77.0
+offset_bottom = -229.0
+text = "0"
+
 [node name="Spawn" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true

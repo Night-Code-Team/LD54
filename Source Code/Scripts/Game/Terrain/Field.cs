@@ -4,7 +4,7 @@ public partial class Field : TileMap
 	private Vector2I airCords = new(0, 1);
 	private readonly float PropabilityK = 0.16F;
 	private readonly float PropabilityB = 1.0F;
-	private readonly int size = 5;
+	private readonly int size = 10;
 
 	public override void _Ready()
 	{

@@ -10,6 +10,7 @@ public partial class Pizdyulina : CharacterBody2D
 		MoveAndSlide();
 		if (GetSlideCollisionCount() > 0)
 		{
+			GetNode<Label>("/root/Game/Camera/Counter").Text = (Convert.ToInt32(GetNode<Label>("/root/Game/Camera/Counter").Text) + 20).ToString();
 			GetSlideCollision(0).GetCollider().Free();
 			QueueFree();
 		}

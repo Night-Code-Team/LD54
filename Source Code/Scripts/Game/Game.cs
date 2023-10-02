@@ -8,7 +8,7 @@ public partial class Game : Node2D
 	}
 	private void Spawn()
 	{
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 10 + Convert.ToInt32(GetNode<Label>("/root/Game/Camera/Counter").Text) / 100; i++)
 		{
 			Bydlo bydlo = GD.Load<PackedScene>("res://Assets/Templates/Characters/Bydlo.tscn").Instantiate<Bydlo>();
 			AddChild(bydlo);
@@ -21,6 +21,7 @@ public partial class Game : Node2D
 			GetNode<Control>("/root/Game/Camera/Pause Menu").Show();
 			GetTree().Paused = true;
 		}
+		GetNode<Label>("/root/Game/Camera/Counter").Text = (Convert.ToInt32(GetNode<Label>("/root/Game/Camera/Counter").Text) + 1).ToString();
 	}
 	private void OnSpawnElapsed()
 	{
