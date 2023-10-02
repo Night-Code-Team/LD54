@@ -1,7 +1,32 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsjv7gjgf53sh"]
 
-[ext_resource type="Texture2D" uid="uid://40v1us54c1rw" path="res://Assets/Images/Tiles/tile1_set.png" id="1_jidn6"]
-[ext_resource type="Script" path="res://Scripts/Game/Terrain/Field.cs" id="2_ba4yh"]
+[ext_resource type="Texture2D" uid="uid://cprt5sfksbuw0" path="res://Assets/Images/Tiles/tile1_set.png" id="1_jidn6"]
+[ext_resource type="Script" path="res://Scripts/Game/Terrain/Field.cs" id="2_5t6h5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4t6cj"]
+vertices = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_u2hsq"]
+vertices = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qvvq7"]
+vertices = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_u4jh7"]
+vertices = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0gi2t"]
+vertices = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wfkbg"]
 texture = ExtResource("1_jidn6")
