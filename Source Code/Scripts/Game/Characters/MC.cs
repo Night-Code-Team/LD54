@@ -1,8 +1,16 @@
 public partial class MC : Character
 {
-	public override void _Ready()
+	private int Rotate()
 	{
-		Spawn();
+		if (Input.IsActionPressed("w"))
+			return 1;
+		if (Input.IsActionPressed("s"))
+			return 2;
+		if (Input.IsActionPressed("a"))
+			return 3;
+		if (Input.IsActionPressed("d"))
+			return 4;
+		return 0;
 	}
 	public override void _PhysicsProcess(double delta)
 	{
@@ -28,6 +36,7 @@ public partial class MC : Character
 	{
 		Vector2 inputDirection = Input.GetVector("a", "d", "w", "s");
 		Velocity = inputDirection * Vel;
+		GetNode<AnimatedSprite2D>("Texture").Frame = Rotate();
 		MoveAndSlide();
 	}
 	public override void Attack()
@@ -52,30 +61,11 @@ public partial class MC : Character
 	public override void OnBodyExited(Node2D body)
 	{
 		LostGround = true;
-		FallTimer = 1F;
+		FallTimer = 0.1F;
 	}
 	public override void Fall()
 	{
 		Die();
-	}
-	private int Rotate()
-	{
-		if (Input.IsActionPressed("w"))
-			return 1;
-		if (Input.IsActionPressed("s"))
-			return 2;
-		if (Input.IsActionPressed("a"))
-			return 3;
-		if (Input.IsActionPressed("d"))
-			return 4;
-		return 0;
-	}
-	public void OnAnimationFinished()
-	{
-		if (Rotate() == 0)
-		{
-			GetNode<AnimatedSprite2D>("Texture").Play("Stay");
-		}
 	}
 	public override int HP { get; set; } = 3;
 	public override int Vel { get; set; } = 200;
