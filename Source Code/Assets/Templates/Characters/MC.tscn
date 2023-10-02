@@ -90,6 +90,5 @@ position = Vector2(1.5, 27)
 shape = SubResource("RectangleShape2D_ckphk")
 debug_color = Color(0.776471, 0.431373, 0.235294, 0.419608)
 
-[connection signal="animation_finished" from="Texture" to="." method="OnAnimationFinished"]
 [connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
 [connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]
