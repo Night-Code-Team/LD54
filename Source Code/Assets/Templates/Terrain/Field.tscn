@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b1qgf5n0mq5f2"]
 
-[ext_resource type="Texture2D" uid="uid://bfskr8cdmthrd" path="res://Assets/Images/Tiles/tile1_set.png" id="1_jidn6"]
+[ext_resource type="Texture2D" uid="uid://d0g44vyemu8ra" path="res://Assets/Images/Tiles/tile1_set.png" id="1_jidn6"]
 [ext_resource type="Script" path="res://Scripts/Game/Terrain/Field.cs" id="2_5t6h5"]
 [ext_resource type="AudioStream" uid="uid://bfhlbesnai3wx" path="res://Assets/Sounds/tile_distruction.mp3" id="3_payti"]
 
