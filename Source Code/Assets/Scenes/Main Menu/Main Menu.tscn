@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dce2fktlrocex"]
+[gd_scene load_steps=9 format=3 uid="uid://dce2fktlrocex"]
 
 [ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="1_nslge"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Start.cs" id="1_y2noc"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="2_ddbrv"]
-[ext_resource type="Texture2D" uid="uid://dassriw1orbd8" path="res://Assets/Images/Buttons/start.png" id="2_e2vn0"]
-[ext_resource type="Texture2D" uid="uid://ccwiya4dlsjt0" path="res://Assets/Images/Buttons/quit.png" id="4_8bu1g"]
+[ext_resource type="Texture2D" uid="uid://ep5nrbvlmesy" path="res://Assets/Images/Buttons/start.png" id="2_e2vn0"]
+[ext_resource type="Texture2D" uid="uid://fb2qsc7j45d6" path="res://Assets/Images/Buttons/quit.png" id="4_8bu1g"]
+[ext_resource type="AudioStream" uid="uid://kw3ij4ughoa6" path="res://Assets/Sounds/button.mp3" id="4_wws11"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1moks"]
 shader = ExtResource("1_nslge")
@@ -31,6 +32,9 @@ offset_right = 665.0
 offset_bottom = 1020.0
 script = ExtResource("1_y2noc")
 
+[node name="Click" type="AudioStreamPlayer2D" parent="Start"]
+stream = ExtResource("4_wws11")
+
 [node name="Quit" type="Button" parent="."]
 material = SubResource("ShaderMaterial_4n5sy")
 layout_mode = 0
@@ -39,3 +43,6 @@ offset_top = 864.0
 offset_right = 1849.0
 offset_bottom = 1014.0
 script = ExtResource("2_ddbrv")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Quit"]
+stream = ExtResource("4_wws11")

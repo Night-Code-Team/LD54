@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1qgf5n0mq5f2"]
+[gd_scene load_steps=11 format=3 uid="uid://b1qgf5n0mq5f2"]
 
-[ext_resource type="Texture2D" uid="uid://bfskr8cdmthrd" path="res://Assets/Images/Tiles/tile1_set.png" id="1_jidn6"]
+[ext_resource type="Texture2D" uid="uid://d0g44vyemu8ra" path="res://Assets/Images/Tiles/tile1_set.png" id="1_jidn6"]
 [ext_resource type="Script" path="res://Scripts/Game/Terrain/Field.cs" id="2_5t6h5"]
+[ext_resource type="AudioStream" uid="uid://u2ee6h88qfwc" path="res://Assets/Sounds/tile_distruction.mp3" id="3_payti"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4t6cj"]
 vertices = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
@@ -86,5 +87,8 @@ script = ExtResource("2_5t6h5")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.711
 autostart = true
+
+[node name="Destroy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_payti")
 
 [connection signal="timeout" from="Timer" to="." method="OnTick"]

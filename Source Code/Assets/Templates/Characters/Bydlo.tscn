@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b76i516h5wmqm"]
+[gd_scene load_steps=7 format=3 uid="uid://b76i516h5wmqm"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Characters/Bydlo.cs" id="1_ixnpw"]
-[ext_resource type="Texture2D" uid="uid://chxueeqdnu68b" path="res://Assets/Images/Bydlo/Bydlo.png" id="2_bu4sv"]
+[ext_resource type="AudioStream" uid="uid://dh36l7qms0soh" path="res://Assets/Sounds/bydlo_fly.mp3" id="2_cokuw"]
+[ext_resource type="AudioStream" uid="uid://br5yraxsogqkm" path="res://Assets/Sounds/bydlo_attack.mp3" id="3_5j3wi"]
+[ext_resource type="AudioStream" uid="uid://oixnm7witnth" path="res://Assets/Sounds/bydlo_death.mp3" id="3_eqn6b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ko8r7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bu4sv")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -29,5 +31,10 @@ scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_lpce1")
 
 [node name="Step" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_cokuw")
 
 [node name="Attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5j3wi")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_eqn6b")
