@@ -19,3 +19,4 @@ exportpresets.cfg
 patch.txt
 
 *.kra~
+/Source Code/Assets/Templates/Key/Key.tscn
