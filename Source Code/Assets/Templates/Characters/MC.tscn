@@ -1,32 +1,21 @@
-[gd_scene load_steps=14 format=3 uid="uid://boajk5q68nfnm"]
+[gd_scene load_steps=15 format=3 uid="uid://boajk5q68nfnm"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Characters/MC.cs" id="1_pfkgx"]
-[ext_resource type="AudioStream" uid="uid://cy717vgjqh8co" path="res://Assets/Sounds/player_run.mp3" id="2_7i33v"]
-[ext_resource type="AudioStream" uid="uid://dlemniry6xddm" path="res://Assets/Sounds/magik_shoot.mp3" id="3_b1nsb"]
-[ext_resource type="AudioStream" uid="uid://vx1aaqa3t6xn" path="res://Assets/Sounds/player_death_from_pizdule.mp3" id="4_qmnha"]
-[ext_resource type="AudioStream" uid="uid://brdspsu4teww0" path="res://Assets/Sounds/player_fall.mp3" id="5_sgmrs"]
-[ext_resource type="AudioStream" uid="uid://xwd5tlbjx5p3" path="res://Assets/Sounds/heart.mp3" id="6_ir3ru"]
-[ext_resource type="AudioStream" uid="uid://dipd5pfbjyrwf" path="res://Assets/Sounds/player_spawn.mp3" id="7_anden"]
+[ext_resource type="AudioStream" uid="uid://c52cgwyoediw3" path="res://Assets/Sounds/player_run.mp3" id="2_7i33v"]
+[ext_resource type="AudioStream" uid="uid://bbnnuqf77fxvo" path="res://Assets/Sounds/magik_shoot.mp3" id="3_b1nsb"]
+[ext_resource type="AudioStream" uid="uid://c2pshv6kmjr0b" path="res://Assets/Sounds/player_death_from_pizdule.mp3" id="4_qmnha"]
+[ext_resource type="AudioStream" uid="uid://dfj45afegswjf" path="res://Assets/Sounds/player_fall.mp3" id="5_sgmrs"]
+[ext_resource type="AudioStream" uid="uid://kqgb88sf85rl" path="res://Assets/Sounds/heart.mp3" id="6_ir3ru"]
+[ext_resource type="AudioStream" uid="uid://bdbtv6yxlplq" path="res://Assets/Sounds/player_spawn.mp3" id="7_anden"]
 [ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="7_drjx0"]
-[ext_resource type="Texture2D" uid="uid://8tvhls1a1p5w" path="res://Assets/Images/Game/Aim.png" id="8_qtngn"]
+[ext_resource type="Texture2D" uid="uid://beb2rdiyvc7tb" path="res://Assets/Images/Game/Aim.png" id="8_qtngn"]
+[ext_resource type="Texture2D" uid="uid://cbbtngru24v01" path="res://Assets/Images/Player/player_stay1.png" id="16_f1yqo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_183np"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
+"texture": ExtResource("16_f1yqo")
 }],
 "loop": true,
 "name": &"default",

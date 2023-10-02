@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://b76i516h5wmqm"]
+[gd_scene load_steps=9 format=3 uid="uid://b76i516h5wmqm"]
 
 [ext_resource type="Script" path="res://Scripts/Game/Characters/Bydlo.cs" id="1_ixnpw"]
-[ext_resource type="AudioStream" uid="uid://dh36l7qms0soh" path="res://Assets/Sounds/bydlo_fly.mp3" id="2_cokuw"]
-[ext_resource type="AudioStream" uid="uid://br5yraxsogqkm" path="res://Assets/Sounds/bydlo_attack.mp3" id="3_5j3wi"]
-[ext_resource type="AudioStream" uid="uid://oixnm7witnth" path="res://Assets/Sounds/bydlo_death.mp3" id="3_eqn6b"]
+[ext_resource type="AudioStream" uid="uid://44vmith22vw8" path="res://Assets/Sounds/bydlo_fly.mp3" id="2_cokuw"]
+[ext_resource type="Texture2D" uid="uid://bk46porjlk264" path="res://Assets/Images/Bydlo/bydlo1.png" id="2_t0g4k"]
+[ext_resource type="AudioStream" uid="uid://b3j15j1pi2unc" path="res://Assets/Sounds/bydlo_attack.mp3" id="3_5j3wi"]
+[ext_resource type="AudioStream" uid="uid://6ri2mi0n8q3r" path="res://Assets/Sounds/bydlo_death.mp3" id="3_eqn6b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ko8r7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("2_t0g4k")
 }],
 "loop": true,
 "name": &"default",
