@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://boajk5q68nfnm" path="res://Assets/Templates/Characters/MC.tscn" id="4_2dsvc"]
 [ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="4_yxgnr"]
 [ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="6_y4t4s"]
-[ext_resource type="Texture2D" uid="uid://dxcl7pn5aw40p" path="res://Assets/Images/Buttons/pause.png" id="7_cstbi"]
-[ext_resource type="Texture2D" uid="uid://crjbwmajev5wa" path="res://Assets/Images/Buttons/resume.png" id="9_g5fuc"]
-[ext_resource type="Texture2D" uid="uid://b5q2gjk7spjm2" path="res://Assets/Images/Buttons/menu.png" id="11_do3jw"]
-[ext_resource type="Texture2D" uid="uid://ccwiya4dlsjt0" path="res://Assets/Images/Buttons/quit.png" id="13_ry5in"]
+[ext_resource type="Texture2D" uid="uid://dbxj8t187pxr4" path="res://Assets/Images/Buttons/pause.png" id="7_cstbi"]
+[ext_resource type="Texture2D" uid="uid://cqpqvgatdclrg" path="res://Assets/Images/Buttons/resume.png" id="9_g5fuc"]
+[ext_resource type="Texture2D" uid="uid://cct16cx3kg6v1" path="res://Assets/Images/Buttons/menu.png" id="11_do3jw"]
+[ext_resource type="Texture2D" uid="uid://brh7pk8unr86g" path="res://Assets/Images/Buttons/quit.png" id="13_ry5in"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ghn8y"]
 shader = ExtResource("6_y4t4s")
