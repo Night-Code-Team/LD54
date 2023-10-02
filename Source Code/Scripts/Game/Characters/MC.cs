@@ -67,8 +67,14 @@ public partial class MC : Character
 	{
 		Die();
 	}
+	public void OnShieldTimerElapsed()
+	{
+		Shielded = false;
+		GetNode<ColorRect>("Shield").Hide();
+	}
 	public override int HP { get; set; } = 3;
 	public override int Vel { get; set; } = 200;
 	public override double FallTimer { get; set; } = 0.1F;
 	public override bool LostGround { get; set; } = false;
+	public bool Shielded { get; set; } = false;
 }

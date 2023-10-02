@@ -54,6 +54,9 @@ offset_top = -72.0
 offset_right = 65.0
 offset_bottom = 56.0
 
+[node name="ShieldTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -7.5)
 scale = Vector2(2, 2)
@@ -90,5 +93,6 @@ position = Vector2(1.5, 27)
 shape = SubResource("RectangleShape2D_ckphk")
 debug_color = Color(0.776471, 0.431373, 0.235294, 0.419608)
 
+[connection signal="timeout" from="ShieldTimer" to="." method="OnShieldTimerElapsed"]
 [connection signal="body_entered" from="Area2D" to="." method="OnBodyEntered"]
 [connection signal="body_exited" from="Area2D" to="." method="OnBodyExited"]

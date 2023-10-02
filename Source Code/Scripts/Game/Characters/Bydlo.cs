@@ -21,17 +21,27 @@ public partial class Bydlo : Character
 	}
 	public override void Attack()
 	{
-
+		MC mc = GetNode<MC>("/root/Game/Field/MC");
+		if (!mc.Shielded)
+		{
+			mc.Shielded = true;
+			mc.HP -= 1;
+			HPBar hp = GetNode<HPBar>("/root/Game/Camera/HP Bar");
+			hp.RemoveChild(hp.GetChild(hp.GetChildCount() - 1));
+			if (mc.HP > 1)
+				mc.HP -= 1;
+			else
+				mc.Die();
+			mc.GetNode<Timer>("ShieldTimer").Start();
+			mc.GetNode<ColorRect>("Shield").Show();
+		}
 	}
 	public override void _PhysicsProcess(double delta)
 	{
 		Move();
 		KinematicCollision2D collide = MoveAndCollide(direction);
 		if (collide != null)
-		{
-
-		}
-
+			Attack();
 		if (LostGround)
 			FallTimer -= delta;
 		if (FallTimer < 0.0F)
