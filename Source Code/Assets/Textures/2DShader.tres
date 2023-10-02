@@ -1,0 +1,11 @@
+[gd_resource type="Shader" format=3 uid="uid://c15cs67h5iv6q"]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform sampler2D Image;
+
+void fragment()
+{
+	COLOR = texture(Image, UV);
+}"

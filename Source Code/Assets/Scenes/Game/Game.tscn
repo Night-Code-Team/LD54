@@ -1,0 +1,123 @@
+[gd_scene load_steps=19 format=3 uid="uid://cf7cvkdc3o7g5"]
+
+[ext_resource type="Script" path="res://Scripts/Game/HPBar.cs" id="1_54iov"]
+[ext_resource type="Script" path="res://Scripts/Game/Game.cs" id="1_drsjl"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Pause.cs" id="1_du2po"]
+[ext_resource type="Script" path="res://Scripts/Game/Camera.cs" id="1_owaod"]
+[ext_resource type="PackedScene" uid="uid://b1qgf5n0mq5f2" path="res://Assets/Templates/Terrain/Field.tscn" id="2_bgl8o"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Resume.cs" id="2_qbmxw"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Game Buttons/Menu.cs" id="3_jjjop"]
+[ext_resource type="PackedScene" uid="uid://boajk5q68nfnm" path="res://Assets/Templates/Characters/MC.tscn" id="4_2dsvc"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Menu Buttons/Quit.cs" id="4_yxgnr"]
+[ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="6_y4t4s"]
+[ext_resource type="Texture2D" uid="uid://dbxj8t187pxr4" path="res://Assets/Images/Buttons/pause.png" id="7_cstbi"]
+[ext_resource type="Texture2D" uid="uid://cqpqvgatdclrg" path="res://Assets/Images/Buttons/resume.png" id="9_g5fuc"]
+[ext_resource type="Texture2D" uid="uid://cct16cx3kg6v1" path="res://Assets/Images/Buttons/menu.png" id="11_do3jw"]
+[ext_resource type="Texture2D" uid="uid://brh7pk8unr86g" path="res://Assets/Images/Buttons/quit.png" id="13_ry5in"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghn8y"]
+shader = ExtResource("6_y4t4s")
+shader_parameter/Image = ExtResource("7_cstbi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0i81g"]
+shader = ExtResource("6_y4t4s")
+shader_parameter/Image = ExtResource("9_g5fuc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbu0g"]
+shader = ExtResource("6_y4t4s")
+shader_parameter/Image = ExtResource("11_do3jw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nhfli"]
+shader = ExtResource("6_y4t4s")
+shader_parameter/Image = ExtResource("13_ry5in")
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_drsjl")
+
+[node name="Field" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Map" parent="Field" instance=ExtResource("2_bgl8o")]
+position = Vector2(960, 540)
+
+[node name="MC" parent="Field" instance=ExtResource("4_2dsvc")]
+position = Vector2(940, 526)
+scale = Vector2(0.5, 0.5)
+
+[node name="Music" type="AudioStreamPlayer" parent="Field"]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+zoom = Vector2(2, 2)
+script = ExtResource("1_owaod")
+
+[node name="HP Bar" type="Control" parent="Camera"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -458.0
+offset_top = -253.0
+offset_right = -268.0
+offset_bottom = -203.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_54iov")
+
+[node name="Pause" type="Button" parent="Camera"]
+material = SubResource("ShaderMaterial_ghn8y")
+offset_left = 364.0
+offset_top = -254.0
+offset_right = 564.0
+offset_bottom = -204.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_du2po")
+
+[node name="Pause Menu" type="Control" parent="Camera"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+
+[node name="Pause Background" type="ColorRect" parent="Camera/Pause Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.419608)
+
+[node name="Resume" type="Button" parent="Camera/Pause Menu/Pause Background"]
+material = SubResource("ShaderMaterial_0i81g")
+layout_mode = 0
+offset_left = 674.0
+offset_top = 318.0
+offset_right = 1274.0
+offset_bottom = 468.0
+script = ExtResource("2_qbmxw")
+
+[node name="Menu" type="Button" parent="Camera/Pause Menu/Pause Background"]
+material = SubResource("ShaderMaterial_nbu0g")
+layout_mode = 0
+offset_left = 673.0
+offset_top = 492.0
+offset_right = 1273.0
+offset_bottom = 642.0
+script = ExtResource("3_jjjop")
+
+[node name="Quit" type="Button" parent="Camera/Pause Menu/Pause Background"]
+material = SubResource("ShaderMaterial_nhfli")
+layout_mode = 0
+offset_left = 672.0
+offset_top = 666.0
+offset_right = 1272.0
+offset_bottom = 816.0
+script = ExtResource("4_yxgnr")

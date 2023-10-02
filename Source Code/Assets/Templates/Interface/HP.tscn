@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d10wj0bo17b7u"]
+
+[ext_resource type="Material" uid="uid://bu1fypgyj7c1a" path="res://Assets/Textures/Game/HP.tres" id="1_p3eku"]
+
+[node name="ColorRect" type="ColorRect"]
+material = ExtResource("1_p3eku")
+offset_right = 50.0
+offset_bottom = 50.0

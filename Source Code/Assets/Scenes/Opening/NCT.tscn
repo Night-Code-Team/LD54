@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh0g6q1ro2ady"]
+[gd_scene load_steps=7 format=3 uid="uid://dh0g6q1ro2ady"]
 
 [ext_resource type="Material" uid="uid://bhynxokklh0y4" path="res://Assets/Textures/Backgrounds/NCT.tres" id="1"]
 [ext_resource type="Script" path="res://Scripts/Opening/UI.cs" id="2"]
@@ -34,36 +34,25 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_lqpu7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_20xit"]
 _data = {
 "Close": SubResource("1"),
-"Open": SubResource("2"),
-"RESET": SubResource("Animation_lqpu7")
+"Open": SubResource("2")
 }
 
 [node name="NCT" type="Node2D"]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1366.0
-offset_bottom = 768.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2")
+metadata/_edit_use_anchors_ = true
 
 [node name="NCT" type="ColorRect" parent="UI"]
 self_modulate = Color(0.599999, 0.599999, 0.599999, 0.599999)
@@ -74,6 +63,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Show Hide" type="AnimationPlayer" parent="UI"]
 libraries = {
@@ -81,9 +71,12 @@ libraries = {
 }
 
 [node name="Background" type="ColorRect" parent="UI"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 

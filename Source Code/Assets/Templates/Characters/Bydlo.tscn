@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b76i516h5wmqm"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Characters/Bydlo.cs" id="1_ixnpw"]
+[ext_resource type="Texture2D" uid="uid://chxueeqdnu68b" path="res://Assets/Images/Bydlo/Bydlo.png" id="2_bu4sv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ko8r7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bu4sv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpce1"]
+
+[node name="Bydlo" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 14
+script = ExtResource("1_ixnpw")
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ko8r7")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_lpce1")
+
+[node name="Step" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="."]

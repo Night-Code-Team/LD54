@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bu1fypgyj7c1a"]
+
+[ext_resource type="Shader" uid="uid://c15cs67h5iv6q" path="res://Assets/Textures/2DShader.tres" id="1_sudot"]
+[ext_resource type="Texture2D" uid="uid://diwd2j72ysd1s" path="res://Assets/Images/Game/HP.png" id="2_wqil6"]
+
+[resource]
+shader = ExtResource("1_sudot")
+shader_parameter/Image = ExtResource("2_wqil6")
