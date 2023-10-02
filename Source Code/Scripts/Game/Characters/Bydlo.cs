@@ -1,16 +1,23 @@
 public partial class Bydlo : Character
 {
+	private static readonly Random rng = new();
+	private Vector2 direction;
+	public override void _Ready()
+	{
+		Spawn();
+	}
 	public override void Spawn()
 	{
-
+		Position = new(rng.Next(-1408, 1408), rng.Next(-1408, 1408));
 	}
 	public override void Die()
 	{
-
+		QueueFree();
 	}
 	public override void Move()
 	{
-
+		Vector2 dest = GetNode<CharacterBody2D>("/root/Game/Field/MC").Position;
+		direction = (dest - Position).Normalized() * 3;
 	}
 	public override void Attack()
 	{
@@ -18,6 +25,8 @@ public partial class Bydlo : Character
 	}
 	public override void _PhysicsProcess(double delta)
 	{
+		Move();
+		MoveAndCollide(direction);
 		if (LostGround)
 			FallTimer -= delta;
 		if (FallTimer < 0.0F)
@@ -38,7 +47,7 @@ public partial class Bydlo : Character
 		Die();
 	}
 	public override int HP { get; set; } = 1;
-	public override int Vel { get; set; }
+	public override int Vel { get; set; } = 180;
 	public override double FallTimer { get; set; } = 0.1;
 	public override bool LostGround { get; set; } = false;
 }

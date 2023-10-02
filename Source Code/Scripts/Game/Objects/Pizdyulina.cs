@@ -1,4 +1,3 @@
-using System.Runtime.Serialization;
 public partial class Pizdyulina : CharacterBody2D
 {
 	/// <summary>
@@ -9,5 +8,10 @@ public partial class Pizdyulina : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		MoveAndSlide();
+		if (GetSlideCollisionCount() > 0)
+		{
+			GetSlideCollision(0).GetCollider().Free();
+			QueueFree();
+		}
 	}
 }
