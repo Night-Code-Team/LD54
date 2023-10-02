@@ -24,7 +24,7 @@ size = Vector2(60, 38)
 
 [node name="Bydlo" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 10
+collision_mask = 2
 script = ExtResource("1_ixnpw")
 
 [node name="Texture" type="AnimatedSprite2D" parent="."]

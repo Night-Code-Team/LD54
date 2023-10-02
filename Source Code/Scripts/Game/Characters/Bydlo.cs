@@ -17,7 +17,7 @@ public partial class Bydlo : Character
 	public override void Move()
 	{
 		Vector2 dest = GetNode<CharacterBody2D>("/root/Game/Field/MC").Position;
-		direction = (dest - Position).Normalized() * 3;
+		direction = (dest - Position).Normalized() * 4;
 	}
 	public override void Attack()
 	{
@@ -26,7 +26,12 @@ public partial class Bydlo : Character
 	public override void _PhysicsProcess(double delta)
 	{
 		Move();
-		MoveAndCollide(direction);
+		KinematicCollision2D collide = MoveAndCollide(direction);
+		if (collide != null)
+		{
+
+		}
+
 		if (LostGround)
 			FallTimer -= delta;
 		if (FallTimer < 0.0F)
